@@ -77,7 +77,8 @@ texture = ExtResource("3_a34lh")
 offset = Vector2(0, -20)
 script = ExtResource("4_nj3ej")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="SelecaoArea" type="Node2D" parent="."]
+visible = false
 position = Vector2(-323, -146)
 script = ExtResource("5_vfag7")
 cor = Color(0.0392, 0.44688, 0.98, 0.713726)

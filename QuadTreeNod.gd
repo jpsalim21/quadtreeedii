@@ -70,13 +70,13 @@ enum Direcao {
 func addChild(child : QuadTreeNode):
 	selected = true
 	var direcao : Direcao
-	if child.pos.x > global_position.x:
-		if child.pos.y > global_position.y:
+	if child.pos.x >= global_position.x:
+		if child.pos.y <= global_position.y:
 			direcao = Direcao.NE
 		else:
 			direcao = Direcao.SE
 	else:
-		if child.pos.y > global_position.y:
+		if child.pos.y <= global_position.y:
 			direcao = Direcao.NW
 		else:
 			direcao = Direcao.SW

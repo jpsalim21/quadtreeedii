@@ -44,6 +44,16 @@ offset_right = 164.0
 grow_vertical = 0
 text = "Adicionar nó"
 
+[node name="Button2" type="Button" parent="UI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -148.0
+offset_right = 164.0
+offset_bottom = -80.0
+grow_vertical = 0
+text = "Remover nó"
+
 [node name="TextEdit" type="TextEdit" parent="UI"]
 anchors_preset = 2
 anchor_top = 1.0
@@ -53,7 +63,7 @@ offset_top = -59.0
 offset_right = 369.0
 offset_bottom = -14.0
 grow_vertical = 0
-placeholder_text = "Valor de X"
+placeholder_text = "Valor de X (-10 a 10)"
 emoji_menu_enabled = false
 
 [node name="TextEdit2" type="TextEdit" parent="UI"]
@@ -65,7 +75,7 @@ offset_top = -59.0
 offset_right = 581.0
 offset_bottom = -14.0
 grow_vertical = 0
-placeholder_text = "Valor de Y"
+placeholder_text = "Valor de Y (-10 a 10)"
 
 [node name="Seta" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -84,3 +94,4 @@ script = ExtResource("5_vfag7")
 cor = Color(0.0392, 0.44688, 0.98, 0.713726)
 
 [connection signal="pressed" from="UI/Button" to="Arvore" method="_on_button_pressed"]
+[connection signal="pressed" from="UI/Button2" to="Arvore" method="_on_button_2_pressed"]

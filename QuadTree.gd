@@ -23,6 +23,16 @@ func adicionarPonto(x : float, y : float):
 		QuadTreeNode.seta.global_position = raiz.global_position 
 		raiz.addChild(novo)
 
+func removerPonto(x : float, y : float):
+	if abs(x) > 10 or abs(y) > 10:
+		printerr("VALORES IMPOSSÍVEIS")
+		return
+	
+	x = x * 100
+	y = -y * 100
+	if raiz:
+		raiz.auxRemove(x, y)
+
 
 func _ready() -> void:
 	adicionarPonto(1, 1)
@@ -55,3 +65,11 @@ func _on_button_pressed() -> void:
 	textX.text = ""
 	textY.text = ""
 	adicionarPonto(x, y)
+
+
+func _on_button_2_pressed() -> void:
+	var x = float(textX.text)
+	var y = float(textY.text)
+	textX.text = ""
+	textY.text = ""
+	removerPonto(x, y)

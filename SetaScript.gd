@@ -11,7 +11,6 @@ func goTo(pos : Vector2):
 		print("Retornei pq tava travado")
 		return
 	
-	print("Chamei aq")
 	travado = true
 	visible = true
 	var tween = create_tween()

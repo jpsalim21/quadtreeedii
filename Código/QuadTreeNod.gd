@@ -74,17 +74,18 @@ func addChild(child : QuadTreeNode) -> bool:
 	
 	selected = true
 	var direcao : Direcao
-	if child.pos.x >= global_position.x:
-		if child.pos.y <= global_position.y:
+	if child.pos.x >= pos.x:
+		if child.pos.y <= pos.y:
 			direcao = Direcao.NE
 		else:
 			direcao = Direcao.SE
 	else:
-		if child.pos.y <= global_position.y:
+		if child.pos.y >= pos.y:
 			direcao = Direcao.NW
 		else:
 			direcao = Direcao.SW
 	
+	print("Eu, ", self, " estou adicionando no ", direcao)
 	timer.start(1.5)
 	await timer.timeout
 	selected = false
@@ -107,6 +108,9 @@ func addChild(child : QuadTreeNode) -> bool:
 		return await filhos[direcao].addChild(child)
 
 func auxRemove(x : float, y : float):
+	print(x, pos.x)
+	print(y, pos.y)
+	
 	if pos.x == x and pos.y == y:
 		visible = false
 		if pai:
@@ -127,6 +131,8 @@ func auxRemove(x : float, y : float):
 			direcao = Direcao.NW
 		else:
 			direcao = Direcao.SW
+	
+	print(direcao)
 	
 	if not filhos[direcao]:
 		printerr("Valor não encontrado")

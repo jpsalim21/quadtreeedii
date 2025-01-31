@@ -108,10 +108,11 @@ func addChild(child : QuadTreeNode) -> bool:
 
 func auxRemove(x : float, y : float):
 	if pos.x == x and pos.y == y:
-		pai.filhos.erase(self)
 		visible = false
-		for f in filhos:
-			await pai.addChild(f)
+		if pai:
+			pai.filhos.erase(self)
+			for f in filhos:
+				await pai.addChild(f)
 		queue_free()
 		return
 	

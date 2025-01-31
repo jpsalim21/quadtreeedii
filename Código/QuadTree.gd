@@ -36,20 +36,6 @@ func removerPonto(x : float, y : float):
 
 func _ready() -> void:
 	adicionarPonto(1, 1)
-	'''
-	timer.start()
-	await timer.timeout
-	adicionarPonto(3, 3)
-	timer.start()
-	await timer.timeout
-	adicionarPonto(7, 7)
-	timer.start()
-	await timer.timeout
-	adicionarPonto(2, 8)
-	timer.start()
-	await timer.timeout
-	adicionarPonto(6, 2)
-	'''
 
 func _draw() -> void:
 	for i in range(-1000, 1001, 100):
